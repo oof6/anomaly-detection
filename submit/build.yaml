@@ -1,1 +1,26 @@
 # cloudformation solution goes here
+
+AWSTemplateFormatVersion: 2010-09-09
+Description: CloudFormation template that does .....[stuff]
+
+Parameters: 
+  InstanceType: 
+    Description: The EC2 instance type
+    Type: String
+    Default: t3.micro
+    AllowedValues: 
+      - t3.micro
+      - t3.small 
+      - t3.medium
+  KeyName: 
+    Description: Name of an existing EC2 key pair to allow SSH access to the instances
+    Type: 'AWS::EC2::KeyPair::KeyName'
+  UvaId:
+    Description: UVA computing ID
+      Type: String
+      MinLength: 3
+      MaxLength: 9
+    SSHLocation: 
+      Description: THE IP LOCATION... 
+      Type: 
+    
