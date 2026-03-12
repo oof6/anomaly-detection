@@ -11,9 +11,11 @@ from baseline import BaselineManager
 from processor import process_file
 import logging
 
+# make log folder if it doesn't exist
+os.makedirs("logs", exist_ok=True)
+
 # logging
-logging.basicConfig(filename='logs/s3_bucket.log', 
-                    level=logging.INFO, 
+logging.basicConfig(level=logging.INFO, 
                     format='%(asctime)s - %(levelname)s - %(message)s',
                     handlers=[
                         logging.FileHandler('logs/s3_bucket.log'),
