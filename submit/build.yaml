@@ -24,7 +24,7 @@ Parameters:
     Description: THE CURRENT IP LOCATION... 
     Type: String
     MinLength: 9
-    MaxLength: 9
+    MaxLength: 20
     Default: 0.0.0.0/0
     ConstraintDescription: must be a valid IP CIDR range of the form x.x.x.x/x.
 
@@ -34,10 +34,11 @@ Resources:
   # EC2 Instance
   AppInstance:
     Type: AWS::EC2::Instance
+    DependsOn: SNSTopicPolicy
     Properties:
-      ImageId: ami-07ff62358b87c7116 # Ubuntu 20.04 for us-east-1
+      ImageId: ami-04b70fa74e45c3917 # Ubuntu 20.04 for us-east-1
       InstanceType: !Ref InstanceType
-      IAMInstanceProfile: !Ref IAMInstanceProfile
+      IamInstanceProfile: !Ref IAMInstanceProfile
       KeyName: !Ref KeyName
       SecurityGroupIds:
         - !Ref EC2SecurityGroup
@@ -205,7 +206,7 @@ Resources:
             Resource: !Ref SNSTopic 
             Condition:
               ArnLike:
-                aws:SourceArn: !GetAtt S3Bucket.Arn
+                aws:SourceArn: !Sub arn:aws:s3:::${UvaId}-${AWS::StackName}
       Topics:
         - !Ref SNSTopic
 
