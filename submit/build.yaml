@@ -78,6 +78,7 @@ Resources:
           pip install fastapi uvicorn
 
           # run the application
+          mkdir -p logs
           chown -R ubuntu:ubuntu /home/ubuntu/app
           sudo -u ubuntu BUCKET_NAME='${S3Bucket}' bash -c "source /home/ubuntu/app/venv/bin/activate && fastapi run app.py --port 8000" &
 
