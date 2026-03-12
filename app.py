@@ -39,7 +39,7 @@ def log_to_file():
            s3.upload_file("logs/s3_bucket.log", BUCKET_NAME, "logs/s3_bucket.log")
            logger.info("Successfully logged to s3")
     except Exception as e:
-        print(f"Error logging to file: {e}")
+        logger.error(f"Error logging to file: {e}")
 
 # ── SNS subscription confirmation + message handler ──────────────────────────
 
