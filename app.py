@@ -6,14 +6,23 @@ import boto3
 import pandas as pd
 import requests
 from datetime import datetime
-from fastapi import FastAPI, BackgroundTasks, Request
+from fastapi import FastAPI, BackgroundTasks, Request, HTTPException
 from baseline import BaselineManager
 from processor import process_file
+import logging
+
+# logging
+
+
+
 
 app = FastAPI(title="Anomaly Detection Pipeline")
 
 s3 = boto3.client("s3")
 BUCKET_NAME = os.environ["BUCKET_NAME"]
+
+# Logging to file
+
 
 # ── SNS subscription confirmation + message handler ──────────────────────────
 
@@ -127,4 +136,8 @@ def get_current_baseline():
 
 @app.get("/health")
 def health():
-    return {"status": "ok", "bucket": BUCKET_NAME, "timestamp": datetime.utcnow().isoformat()}
+    return {"status": "ok", 
+            "bucket": BUCKET_NAME, 
+            "timestamp": datetime.utcnow().isoformat(),
+            "log_path": "logs/app.log" # add the path to your log file
+            }

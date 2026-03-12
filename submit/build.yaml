@@ -1,7 +1,7 @@
 # cloudformation solution goes here
 
 AWSTemplateFormatVersion: 2010-09-09
-Description: CloudFormation template that does .....[stuff]
+Description: CloudFormation template that does Anomaly Detection
 
 Parameters: 
   InstanceType: 
@@ -17,10 +17,216 @@ Parameters:
     Type: 'AWS::EC2::KeyPair::KeyName'
   UvaId:
     Description: UVA computing ID
-      Type: String
-      MinLength: 3
-      MaxLength: 9
-    SSHLocation: 
-      Description: THE IP LOCATION... 
-      Type: 
-    
+    Type: String
+    MinLength: 3
+    MaxLength: 9
+  MyIP: 
+    Description: THE CURRENT IP LOCATION... 
+    Type: String
+    MinLength: 9
+    MaxLength: 9
+    Default: 0.0.0.0/0
+    ConstraintDescription: must be a valid IP CIDR range of the form x.x.x.x/x.
+
+
+
+Resources:
+  # EC2 Instance
+  AppInstance:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: ami-07ff62358b87c7116 # Ubuntu 20.04 for us-east-1
+      InstanceType: !Ref InstanceType
+      IAMInstanceProfile: !Ref IAMInstanceProfile
+      KeyName: !Ref KeyName
+      SecurityGroupIds:
+        - !Ref EC2SecurityGroup
+      BlockDeviceMappings:
+        - DeviceName: /dev/sda1
+          Ebs:
+            VolumeSize: 16 # 16 GB
+      UserData:
+        Fn::Base64: !Sub |
+          #!/bin/bash
+          # Bootstrapping script
+          apt-get update -y
+          apt-get install -y python3-pip python3-venv git
+
+          # Clone repository and setup env
+          cd /home/ubuntu
+          git clone https://github.com/oof6/anomaly-detection/tree/main # ****************
+          cd app
+
+          python3 -m venv venv
+          source venv/bin/activate
+          
+          #install requirements
+          pip install -r requirements.txt
+          pip install fastapi uvicorn
+
+          # set up AWS credentials
+          export AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+          export AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+          export AWS_REGION=${AWS_REGION}
+          echo "AWS_ACCESS_KEY_ID='${AWS_ACCESS_KEY_ID}'" >> /etc/environment
+          echo "AWS_SECRET_ACCESS_KEY='${AWS_SECRET_ACCESS_KEY}'" >> /etc/environment
+          echo "AWS_REGION='${AWS_REGION}'" >> /etc/environment
+
+          # set up Bucket Name
+          export BUCKET_NAME=${S3Bucket.Arn}
+          echo "BUCKET_NAME='${AppBucket}'" >> /etc/environment
+
+          # run app
+          
+
+        
+
+        
+      # Tags:
+      #   - Key: Name
+      #     Value: !Sub ${AWS::StackName}-ec2-instance
+      
+
+  
+
+  # Security Group
+
+# Security Group allowing ports 80 and 22
+  EC2SecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Security group for EC2 instance allowing HTTP and SSH access
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 8000
+          ToPort: 8000
+          CidrIp: 0.0.0.0/0
+          Description: Allow HTTP traffic from anywhere
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: !Ref MyIP
+          Description: Allow SSH access from my IP
+      Tags:
+        - Key: Name
+          Value: !Sub ${AWS::StackName}-ec2-sg
+
+
+  
+  # Elastic IP
+  ElasticIP:
+    Type: AWS::EC2::EIP
+    Properties:
+      InstanceId: !Ref AppInstance
+      
+
+
+  # S3 Bucket
+  S3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Sub ${UvaId}-${AWS::StackName}
+      # S3 event notification 
+      NotificationConfig:
+        TopicConfig: 
+          - Event: s3:ObjectCreated:*
+            Filter:
+              Key:
+                FilterRules:
+                  - Name: prefix
+                    Value: raw/
+                  - Name: suffix
+                    Value: .csv
+            Topic: !Ref SNSTopic
+      # ********************
+      VersioningConfiguration:
+        Status: Enabled
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+      Tags:
+        - Key: Name
+          Value: !Sub ${AWS::StackName}-s3-bucket
+
+  # IAM Role and Policy
+  IAMInstanceRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal: 
+              Service: ec2.amazonaws.com
+            Action: sts:AssumeRole
+  # policies
+  IAMInstancePolicy:
+    Type: AWS::IAM::Policy
+    Properties:
+      PolicyName: S3BucketAccessPolicy
+      PolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Action:
+              - s3:GetObject
+              - s3:PutObject
+              - s3:DeleteObject
+              - s3:ListBucket
+            Resource:
+              - !Sub ${S3Bucket.Arn}/*
+              - !Sub ${S3Bucket.Arn}
+      Roles:
+        - !Ref IAMInstanceRole
+  # profile
+  IAMInstanceProfile:
+     Type: AWS::IAM::InstanceProfile
+     Properties:
+       Roles:
+         - !Ref IAMInstanceRole   
+
+  # SNS Topic and Subscription
+  SNSTopic:
+    Type: AWS::SNS::Topic
+    Properties:
+      TopicName: ds5220-dp1
+  
+  SNSTopicPolicy:
+    Type: AWS::SNS::TopicPolicy
+    Properties:
+      PolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal: 
+              Service: sns.amazonaws.com
+            Action: SNS:Publish
+            Resource: !Ref SNSTopic 
+            Condition:
+              ArnLike:
+                aws:SourceArn: !GetAtt S3Bucket.Arn
+      Topics:
+        - !Ref SNSTopic
+
+
+  SNSSubscription:
+    Type: AWS::SNS::Subscription
+    Properties:
+      Protocol: http
+      # uses the endpoint of the Elastic IP
+      Endpoint: !Sub http://${ElasticIP}:8000/notify
+      TopicArn: !Ref SNSTopic
+
+
+
+
+Outputs:
+  InstancePublicIP:
+    Description: Public IP address of the instance
+    Value: !Ref ElasticIP
+
+  S3BucketName:
+    Description: The name of the S3 bucket
+    Value: !Ref S3Bucket
