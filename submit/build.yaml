@@ -48,38 +48,37 @@ Resources:
       UserData:
         Fn::Base64: !Sub |
           #!/bin/bash
+          set -e
+
+
           # Bootstrapping script
           apt-get update -y
-          apt-get install -y python3-pip python3-venv git
+          apt-get install -y git python3 python3-pip python3-venv git
+
+          # set up Bucket Name
+          export BUCKET_NAME="${S3Bucket}"
+          echo "BUCKET_NAME='${S3Bucket}'" >> /etc/environment
+
+
 
           # Clone repository and setup env
           cd /home/ubuntu
-          git clone https://github.com/oof6/anomaly-detection/tree/main # ****************
+          git clone https://github.com/oof6/anomaly-detection.git app
           cd app
 
+          # create virtual environment
           python3 -m venv venv
           source venv/bin/activate
+
+
           
-          #install requirements
+          # install requirements
           pip install -r requirements.txt
           pip install fastapi uvicorn
 
-          # set up AWS credentials
-          export AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
-          export AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
-          export AWS_REGION=${AWS_REGION}
-          echo "AWS_ACCESS_KEY_ID='${AWS_ACCESS_KEY_ID}'" >> /etc/environment
-          echo "AWS_SECRET_ACCESS_KEY='${AWS_SECRET_ACCESS_KEY}'" >> /etc/environment
-          echo "AWS_REGION='${AWS_REGION}'" >> /etc/environment
-
-          # set up Bucket Name
-          export BUCKET_NAME=${S3Bucket.Arn}
-          echo "BUCKET_NAME='${AppBucket}'" >> /etc/environment
-
-          # run app
-          
-
-        
+          # run the application
+          chown -R ubuntu:ubuntu /home/ubuntu/app
+          sudo -u ubuntu BUCKET_NAME='${S3Bucket}' bash -c "source /home/ubuntu/app/venv/bin/activate && fastapi run app.py --port 8000" &
 
         
       # Tags:
@@ -127,12 +126,12 @@ Resources:
     Properties:
       BucketName: !Sub ${UvaId}-${AWS::StackName}
       # S3 event notification 
-      NotificationConfig:
-        TopicConfig: 
+      NotificationConfiguration:
+        TopicConfigurations: 
           - Event: s3:ObjectCreated:*
             Filter:
-              Key:
-                FilterRules:
+              S3Key:
+                Rules:
                   - Name: prefix
                     Value: raw/
                   - Name: suffix
@@ -201,7 +200,7 @@ Resources:
         Statement:
           - Effect: Allow
             Principal: 
-              Service: sns.amazonaws.com
+              Service: s3.amazonaws.com
             Action: SNS:Publish
             Resource: !Ref SNSTopic 
             Condition:

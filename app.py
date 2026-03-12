@@ -12,7 +12,16 @@ from processor import process_file
 import logging
 
 # logging
-
+logging.basicConfig(filename='logs/s3_bucket.log', 
+                    level=logging.INFO, 
+                    format='%(asctime)s - %(levelname)s - %(message)s',
+                    handlers=[
+                        logging.FileHandler('logs/s3_bucket.log'),
+                        logging.StreamHandler()
+                        ]
+                    
+                    )
+logger = logging.getLogger("s3_bucket")
 
 
 
@@ -22,32 +31,46 @@ s3 = boto3.client("s3")
 BUCKET_NAME = os.environ["BUCKET_NAME"]
 
 # Logging to file
-
+def log_to_file():
+    try:
+       if os.path.exists("logs/s3_bucket.log"):
+           s3.upload_file("logs/s3_bucket.log", BUCKET_NAME, "logs/s3_bucket.log")
+           logger.info("Successfully logged to s3")
+    except Exception as e:
+        print(f"Error logging to file: {e}")
 
 # ── SNS subscription confirmation + message handler ──────────────────────────
 
 @app.post("/notify")
 async def handle_sns(request: Request, background_tasks: BackgroundTasks):
-    body = await request.json()
-    msg_type = request.headers.get("x-amz-sns-message-type")
+    try:
+        body = await request.json()
+        msg_type = request.headers.get("x-amz-sns-message-type")
 
-    # SNS sends a SubscriptionConfirmation before it will deliver any messages.
-    # Visiting the SubscribeURL confirms the subscription.
-    if msg_type == "SubscriptionConfirmation":
-        confirm_url = body["SubscribeURL"]
-        requests.get(confirm_url)
-        return {"status": "confirmed"}
+        # SNS sends a SubscriptionConfirmation before it will deliver any messages.
+        # Visiting the SubscribeURL confirms the subscription.
+        if msg_type == "SubscriptionConfirmation":
+            confirm_url = body["SubscribeURL"]
+            requests.get(confirm_url)
+            logger.info("SNS subscription confirmed")
+            return {"status": "confirmed"}
 
-    if msg_type == "Notification":
-        # The SNS message body contains the S3 event as a JSON string
-        s3_event = json.loads(body["Message"])
-        for record in s3_event.get("Records", []):
-            key = record["s3"]["object"]["key"]
-            if key.startswith("raw/") and key.endswith(".csv"):
-                background_tasks.add_task(process_file, BUCKET_NAME, key)
+        if msg_type == "Notification":
+            # The SNS message body contains the S3 event as a JSON string
+            s3_event = json.loads(body["Message"])
+            for record in s3_event.get("Records", []):
+                key = record["s3"]["object"]["key"]
+                if key.startswith("raw/") and key.endswith(".csv"):
+                    logger.info(f"Received S3 event for {key}")
+                    background_tasks.add_task(process_file, BUCKET_NAME, key)
+                    background_tasks.add_task(log_to_file)
+                    logger.info(f"Processing started for {key}")
 
-    return {"status": "ok"}
+        return {"status": "ok"}
 
+    except Exception as e:
+        logger.error(f"Error processing SNS message: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
 
 # ── Query endpoints ───────────────────────────────────────────────────────────
 
@@ -139,5 +162,5 @@ def health():
     return {"status": "ok", 
             "bucket": BUCKET_NAME, 
             "timestamp": datetime.utcnow().isoformat(),
-            "log_path": "logs/app.log" # add the path to your log file
+            "log_path": "logs/s3_bucket.log" # add the path to your log file
             }
