@@ -5,7 +5,7 @@
 
 
 #### **Access Permissions:** What element (specify file and line #) grants the SNS subscription permission to send messages to your API? Locate and explain your answer.
-- 
+- lines 101-104 in the build.yaml grant the SNS subscription permission to send messages to the API, because thats where the SNS subscription gets permission to send messages over the internet to the FastAPI that is listening at the address of the Elastic IP
 
 
 
