@@ -1,0 +1,373 @@
+2026-03-12 23:45:01,173 - INFO - Started server process [2747]
+2026-03-12 23:45:01,174 - INFO - Waiting for application startup.
+2026-03-12 23:45:01,187 - INFO - Application startup complete.
+2026-03-12 23:45:01,202 - INFO - Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2026-03-12 23:49:50,539 - INFO - SNS subscription confirmed
+2026-03-12 23:50:59,720 - INFO - Will watch for changes in these directories: ['/home/ubuntu/app']
+2026-03-12 23:50:59,722 - ERROR - [Errno 98] Address already in use
+2026-03-12 23:52:19,253 - INFO - Will watch for changes in these directories: ['/home/ubuntu/app']
+2026-03-12 23:52:19,254 - INFO - Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2026-03-12 23:52:19,255 - INFO - Started reloader process [2954] using WatchFiles
+2026-03-12 23:52:21,771 - INFO - Started server process [2958]
+2026-03-12 23:52:21,772 - INFO - Waiting for application startup.
+2026-03-12 23:52:21,773 - INFO - Application startup complete.
+2026-03-12 23:52:21,864 - INFO - 1 change detected
+2026-03-12 23:52:22,215 - INFO - 1 change detected
+2026-03-12 23:52:22,566 - INFO - 1 change detected
+2026-03-12 23:52:22,917 - INFO - 1 change detected
+2026-03-12 23:52:23,268 - INFO - 1 change detected
+2026-03-12 23:52:23,618 - INFO - 1 change detected
+2026-03-12 23:52:23,969 - INFO - 1 change detected
+2026-03-12 23:52:24,320 - INFO - 1 change detected
+2026-03-12 23:52:24,671 - INFO - 1 change detected
+2026-03-12 23:52:25,022 - INFO - 1 change detected
+2026-03-12 23:52:25,372 - INFO - 1 change detected
+2026-03-12 23:52:25,723 - INFO - 1 change detected
+2026-03-12 23:52:26,074 - INFO - 1 change detected
+2026-03-12 23:52:26,425 - INFO - 1 change detected
+2026-03-12 23:52:26,775 - INFO - 1 change detected
+2026-03-12 23:52:27,126 - INFO - 1 change detected
+2026-03-12 23:52:27,477 - INFO - 1 change detected
+2026-03-12 23:52:27,828 - INFO - 1 change detected
+2026-03-12 23:52:28,179 - INFO - 1 change detected
+2026-03-12 23:52:28,530 - INFO - 1 change detected
+2026-03-12 23:52:28,880 - INFO - 1 change detected
+2026-03-12 23:52:29,231 - INFO - 1 change detected
+2026-03-12 23:52:29,582 - INFO - 1 change detected
+2026-03-12 23:52:29,933 - INFO - 1 change detected
+2026-03-12 23:52:30,284 - INFO - 1 change detected
+2026-03-12 23:52:30,634 - INFO - 1 change detected
+2026-03-12 23:52:30,985 - INFO - 1 change detected
+2026-03-12 23:52:31,336 - INFO - 1 change detected
+2026-03-12 23:52:31,687 - INFO - 1 change detected
+2026-03-12 23:52:32,038 - INFO - 1 change detected
+2026-03-12 23:52:32,389 - INFO - 1 change detected
+2026-03-12 23:52:32,740 - INFO - 1 change detected
+2026-03-12 23:52:33,090 - INFO - 1 change detected
+2026-03-12 23:52:33,441 - INFO - 1 change detected
+2026-03-12 23:52:33,792 - INFO - 1 change detected
+2026-03-12 23:52:34,143 - INFO - 1 change detected
+2026-03-12 23:52:34,493 - INFO - 1 change detected
+2026-03-12 23:52:34,844 - INFO - 1 change detected
+2026-03-12 23:52:35,195 - INFO - 1 change detected
+2026-03-12 23:52:35,546 - INFO - 1 change detected
+2026-03-12 23:52:35,897 - INFO - 1 change detected
+2026-03-12 23:52:36,248 - INFO - 1 change detected
+2026-03-12 23:52:36,598 - INFO - 1 change detected
+2026-03-12 23:52:36,949 - INFO - 1 change detected
+2026-03-12 23:52:37,300 - INFO - 1 change detected
+2026-03-12 23:52:37,651 - INFO - 1 change detected
+2026-03-12 23:52:38,002 - INFO - 1 change detected
+2026-03-12 23:52:38,353 - INFO - 1 change detected
+2026-03-12 23:52:38,703 - INFO - 1 change detected
+2026-03-12 23:52:39,054 - INFO - 1 change detected
+2026-03-12 23:52:39,405 - INFO - 1 change detected
+2026-03-12 23:52:39,756 - INFO - 1 change detected
+2026-03-12 23:52:40,107 - INFO - 1 change detected
+2026-03-12 23:52:40,458 - INFO - 1 change detected
+2026-03-12 23:52:40,809 - INFO - 1 change detected
+2026-03-12 23:52:41,159 - INFO - 1 change detected
+2026-03-12 23:52:41,510 - INFO - 1 change detected
+2026-03-12 23:52:41,861 - INFO - 1 change detected
+2026-03-12 23:52:42,212 - INFO - 1 change detected
+2026-03-12 23:52:42,563 - INFO - 1 change detected
+2026-03-12 23:52:42,914 - INFO - 1 change detected
+2026-03-12 23:52:43,264 - INFO - 1 change detected
+2026-03-12 23:52:43,615 - INFO - 1 change detected
+2026-03-12 23:52:43,966 - INFO - 1 change detected
+2026-03-12 23:52:44,317 - INFO - 1 change detected
+2026-03-12 23:52:44,668 - INFO - 1 change detected
+2026-03-12 23:52:45,019 - INFO - 1 change detected
+2026-03-12 23:52:45,369 - INFO - 1 change detected
+2026-03-12 23:52:45,720 - INFO - 1 change detected
+2026-03-12 23:52:46,071 - INFO - 1 change detected
+2026-03-12 23:52:46,422 - INFO - 1 change detected
+2026-03-12 23:52:46,772 - INFO - 1 change detected
+2026-03-12 23:52:47,123 - INFO - 1 change detected
+2026-03-12 23:52:47,474 - INFO - 1 change detected
+2026-03-12 23:52:47,825 - INFO - 1 change detected
+2026-03-12 23:52:48,176 - INFO - 1 change detected
+2026-03-12 23:52:48,527 - INFO - 1 change detected
+2026-03-12 23:52:48,877 - INFO - 1 change detected
+2026-03-12 23:52:49,228 - INFO - 1 change detected
+2026-03-12 23:52:49,579 - INFO - 1 change detected
+2026-03-12 23:52:49,930 - INFO - 1 change detected
+2026-03-12 23:52:50,281 - INFO - 1 change detected
+2026-03-12 23:52:50,632 - INFO - 1 change detected
+2026-03-12 23:52:50,982 - INFO - 1 change detected
+2026-03-12 23:52:51,333 - INFO - 1 change detected
+2026-03-12 23:52:51,684 - INFO - 1 change detected
+2026-03-12 23:52:52,035 - INFO - 1 change detected
+2026-03-12 23:52:52,386 - INFO - 1 change detected
+2026-03-12 23:52:52,737 - INFO - 1 change detected
+2026-03-12 23:52:53,087 - INFO - 1 change detected
+2026-03-12 23:52:53,438 - INFO - 1 change detected
+2026-03-12 23:52:53,789 - INFO - 1 change detected
+2026-03-12 23:52:54,140 - INFO - 1 change detected
+2026-03-12 23:52:54,491 - INFO - 1 change detected
+2026-03-12 23:52:54,841 - INFO - 1 change detected
+2026-03-12 23:52:55,192 - INFO - 1 change detected
+2026-03-12 23:52:55,543 - INFO - 1 change detected
+2026-03-12 23:52:55,894 - INFO - 1 change detected
+2026-03-12 23:52:56,245 - INFO - 1 change detected
+2026-03-12 23:52:56,595 - INFO - 1 change detected
+2026-03-12 23:52:56,946 - INFO - 1 change detected
+2026-03-12 23:52:57,297 - INFO - 1 change detected
+2026-03-12 23:52:57,648 - INFO - 1 change detected
+2026-03-12 23:52:57,999 - INFO - 1 change detected
+2026-03-12 23:52:58,349 - INFO - 1 change detected
+2026-03-12 23:52:58,700 - INFO - 1 change detected
+2026-03-12 23:52:59,051 - INFO - 1 change detected
+2026-03-12 23:52:59,402 - INFO - 1 change detected
+2026-03-12 23:52:59,753 - INFO - 1 change detected
+2026-03-12 23:53:00,104 - INFO - 1 change detected
+2026-03-12 23:53:00,455 - INFO - 1 change detected
+2026-03-12 23:53:00,806 - INFO - 1 change detected
+2026-03-12 23:53:01,157 - INFO - 1 change detected
+2026-03-12 23:53:01,508 - INFO - 1 change detected
+2026-03-12 23:53:01,859 - INFO - 1 change detected
+2026-03-12 23:53:02,210 - INFO - 1 change detected
+2026-03-12 23:53:02,561 - INFO - 1 change detected
+2026-03-12 23:53:02,913 - INFO - 1 change detected
+2026-03-12 23:53:03,263 - INFO - 1 change detected
+2026-03-12 23:53:03,616 - INFO - 1 change detected
+2026-03-12 23:53:03,966 - INFO - 1 change detected
+2026-03-12 23:53:04,318 - INFO - 1 change detected
+2026-03-12 23:53:04,669 - INFO - 1 change detected
+2026-03-12 23:53:05,020 - INFO - 1 change detected
+2026-03-12 23:53:05,370 - INFO - 1 change detected
+2026-03-12 23:53:05,721 - INFO - 1 change detected
+2026-03-12 23:53:06,072 - INFO - 1 change detected
+2026-03-12 23:53:06,423 - INFO - 1 change detected
+2026-03-12 23:53:06,774 - INFO - 1 change detected
+2026-03-12 23:53:07,125 - INFO - 1 change detected
+2026-03-12 23:53:07,475 - INFO - 1 change detected
+2026-03-12 23:53:07,826 - INFO - 1 change detected
+2026-03-12 23:53:08,177 - INFO - 1 change detected
+2026-03-12 23:53:08,528 - INFO - 1 change detected
+2026-03-12 23:53:08,879 - INFO - 1 change detected
+2026-03-12 23:53:09,229 - INFO - 1 change detected
+2026-03-12 23:53:09,580 - INFO - 1 change detected
+2026-03-12 23:53:09,931 - INFO - 1 change detected
+2026-03-12 23:53:10,282 - INFO - 1 change detected
+2026-03-12 23:53:10,633 - INFO - 1 change detected
+2026-03-12 23:53:10,983 - INFO - 1 change detected
+2026-03-12 23:53:11,334 - INFO - 1 change detected
+2026-03-12 23:53:11,685 - INFO - 1 change detected
+2026-03-12 23:53:12,036 - INFO - 1 change detected
+2026-03-12 23:53:12,386 - INFO - 1 change detected
+2026-03-12 23:53:12,737 - INFO - 1 change detected
+2026-03-12 23:53:13,088 - INFO - 1 change detected
+2026-03-12 23:53:13,439 - INFO - 1 change detected
+2026-03-12 23:53:13,790 - INFO - 1 change detected
+2026-03-12 23:53:14,140 - INFO - 1 change detected
+2026-03-12 23:53:14,491 - INFO - 1 change detected
+2026-03-12 23:53:14,842 - INFO - 1 change detected
+2026-03-12 23:53:15,193 - INFO - 1 change detected
+2026-03-12 23:53:15,418 - INFO - Shutting down
+2026-03-12 23:53:15,519 - INFO - Waiting for application shutdown.
+2026-03-12 23:53:15,520 - INFO - Application shutdown complete.
+2026-03-12 23:53:15,521 - INFO - Finished server process [2958]
+2026-03-12 23:53:15,533 - INFO - Stopping reloader process [2954]
+2026-03-12 23:54:14,119 - INFO - Started server process [2973]
+2026-03-12 23:54:14,120 - INFO - Waiting for application startup.
+2026-03-12 23:54:14,121 - INFO - Application startup complete.
+2026-03-12 23:54:14,122 - INFO - Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2026-03-12 23:54:27,160 - INFO - Shutting down
+2026-03-12 23:54:27,261 - INFO - Waiting for application shutdown.
+2026-03-12 23:54:27,262 - INFO - Application shutdown complete.
+2026-03-12 23:54:27,263 - INFO - Finished server process [2973]
+2026-03-12 23:55:12,954 - INFO - Started server process [3001]
+2026-03-12 23:55:12,955 - INFO - Waiting for application startup.
+2026-03-12 23:55:12,956 - INFO - Application startup complete.
+2026-03-12 23:55:12,957 - INFO - Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2026-03-12 23:57:09,274 - INFO - Shutting down
+2026-03-12 23:57:09,375 - INFO - Waiting for application shutdown.
+2026-03-12 23:57:09,376 - INFO - Application shutdown complete.
+2026-03-12 23:57:09,377 - INFO - Finished server process [3001]
+2026-03-12 23:58:40,464 - INFO - Started server process [3014]
+2026-03-12 23:58:40,465 - INFO - Waiting for application startup.
+2026-03-12 23:58:40,465 - INFO - Application startup complete.
+2026-03-12 23:58:40,466 - INFO - Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2026-03-12 23:59:12,634 - INFO - Received S3 event for raw/sensors_20260312T235911.csv
+2026-03-12 23:59:12,634 - INFO - Processing started for raw/sensors_20260312T235911.csv
+2026-03-12 23:59:13,191 - INFO - Successfully logged to s3
+2026-03-13 00:00:13,399 - INFO - Received S3 event for raw/sensors_20260313T000011.csv
+2026-03-13 00:00:13,399 - INFO - Processing started for raw/sensors_20260313T000011.csv
+2026-03-13 00:00:14,166 - INFO - Successfully logged to s3
+2026-03-13 00:01:13,162 - INFO - Received S3 event for raw/sensors_20260313T000112.csv
+2026-03-13 00:01:13,162 - INFO - Processing started for raw/sensors_20260313T000112.csv
+2026-03-13 00:01:13,787 - INFO - Successfully logged to s3
+2026-03-13 00:02:13,759 - INFO - Received S3 event for raw/sensors_20260313T000212.csv
+2026-03-13 00:02:13,759 - INFO - Processing started for raw/sensors_20260313T000212.csv
+2026-03-13 00:02:14,423 - INFO - Successfully logged to s3
+2026-03-13 00:03:13,340 - INFO - Received S3 event for raw/sensors_20260313T000312.csv
+2026-03-13 00:03:13,340 - INFO - Processing started for raw/sensors_20260313T000312.csv
+2026-03-13 00:03:13,932 - INFO - Successfully logged to s3
+2026-03-13 00:04:14,040 - INFO - Received S3 event for raw/sensors_20260313T000412.csv
+2026-03-13 00:04:14,040 - INFO - Processing started for raw/sensors_20260313T000412.csv
+2026-03-13 00:04:14,642 - INFO - Successfully logged to s3
+2026-03-13 00:05:14,417 - INFO - Received S3 event for raw/sensors_20260313T000512.csv
+2026-03-13 00:05:14,417 - INFO - Processing started for raw/sensors_20260313T000512.csv
+2026-03-13 00:05:14,993 - INFO - Successfully logged to s3
+2026-03-13 00:06:14,393 - INFO - Received S3 event for raw/sensors_20260313T000613.csv
+2026-03-13 00:06:14,393 - INFO - Processing started for raw/sensors_20260313T000613.csv
+2026-03-13 00:06:15,064 - INFO - Successfully logged to s3
+2026-03-13 00:07:14,812 - INFO - Received S3 event for raw/sensors_20260313T000713.csv
+2026-03-13 00:07:14,812 - INFO - Processing started for raw/sensors_20260313T000713.csv
+2026-03-13 00:07:15,467 - INFO - Successfully logged to s3
+2026-03-13 00:08:14,520 - INFO - Received S3 event for raw/sensors_20260313T000813.csv
+2026-03-13 00:08:14,520 - INFO - Processing started for raw/sensors_20260313T000813.csv
+2026-03-13 00:08:15,116 - INFO - Successfully logged to s3
+2026-03-13 00:09:15,216 - INFO - Received S3 event for raw/sensors_20260313T000913.csv
+2026-03-13 00:09:15,216 - INFO - Processing started for raw/sensors_20260313T000913.csv
+2026-03-13 00:09:15,965 - INFO - Successfully logged to s3
+2026-03-13 00:10:14,794 - INFO - Received S3 event for raw/sensors_20260313T001013.csv
+2026-03-13 00:10:14,794 - INFO - Processing started for raw/sensors_20260313T001013.csv
+2026-03-13 00:10:15,395 - INFO - Successfully logged to s3
+2026-03-13 00:11:15,425 - INFO - Received S3 event for raw/sensors_20260313T001114.csv
+2026-03-13 00:11:15,425 - INFO - Processing started for raw/sensors_20260313T001114.csv
+2026-03-13 00:11:16,062 - INFO - Successfully logged to s3
+2026-03-13 00:12:16,108 - INFO - Received S3 event for raw/sensors_20260313T001214.csv
+2026-03-13 00:12:16,108 - INFO - Processing started for raw/sensors_20260313T001214.csv
+2026-03-13 00:12:16,709 - INFO - Successfully logged to s3
+2026-03-13 00:13:15,865 - INFO - Received S3 event for raw/sensors_20260313T001314.csv
+2026-03-13 00:13:15,865 - INFO - Processing started for raw/sensors_20260313T001314.csv
+2026-03-13 00:13:16,408 - INFO - Successfully logged to s3
+2026-03-13 00:14:16,405 - INFO - Received S3 event for raw/sensors_20260313T001414.csv
+2026-03-13 00:14:16,405 - INFO - Processing started for raw/sensors_20260313T001414.csv
+2026-03-13 00:14:16,987 - INFO - Successfully logged to s3
+2026-03-13 00:15:16,448 - INFO - Received S3 event for raw/sensors_20260313T001515.csv
+2026-03-13 00:15:16,448 - INFO - Processing started for raw/sensors_20260313T001515.csv
+2026-03-13 00:15:16,996 - INFO - Successfully logged to s3
+2026-03-13 00:16:16,699 - INFO - Received S3 event for raw/sensors_20260313T001615.csv
+2026-03-13 00:16:16,699 - INFO - Processing started for raw/sensors_20260313T001615.csv
+2026-03-13 00:16:17,247 - INFO - Successfully logged to s3
+2026-03-13 00:17:16,499 - INFO - Received S3 event for raw/sensors_20260313T001715.csv
+2026-03-13 00:17:16,499 - INFO - Processing started for raw/sensors_20260313T001715.csv
+2026-03-13 00:17:17,099 - INFO - Successfully logged to s3
+2026-03-13 00:18:17,135 - INFO - Received S3 event for raw/sensors_20260313T001815.csv
+2026-03-13 00:18:17,135 - INFO - Processing started for raw/sensors_20260313T001815.csv
+2026-03-13 00:18:17,686 - INFO - Successfully logged to s3
+2026-03-13 00:19:16,909 - INFO - Received S3 event for raw/sensors_20260313T001915.csv
+2026-03-13 00:19:16,909 - INFO - Processing started for raw/sensors_20260313T001915.csv
+2026-03-13 00:19:17,394 - INFO - Successfully logged to s3
+2026-03-13 00:20:17,474 - INFO - Received S3 event for raw/sensors_20260313T002016.csv
+2026-03-13 00:20:17,474 - INFO - Processing started for raw/sensors_20260313T002016.csv
+2026-03-13 00:20:18,121 - INFO - Successfully logged to s3
+2026-03-13 00:21:18,039 - INFO - Received S3 event for raw/sensors_20260313T002116.csv
+2026-03-13 00:21:18,039 - INFO - Processing started for raw/sensors_20260313T002116.csv
+2026-03-13 00:21:18,631 - INFO - Successfully logged to s3
+2026-03-13 00:22:17,779 - INFO - Received S3 event for raw/sensors_20260313T002216.csv
+2026-03-13 00:22:17,779 - INFO - Processing started for raw/sensors_20260313T002216.csv
+2026-03-13 00:22:18,530 - INFO - Successfully logged to s3
+2026-03-13 00:23:17,749 - INFO - Received S3 event for raw/sensors_20260313T002316.csv
+2026-03-13 00:23:17,749 - INFO - Processing started for raw/sensors_20260313T002316.csv
+2026-03-13 00:23:18,444 - INFO - Successfully logged to s3
+2026-03-13 00:24:18,054 - INFO - Received S3 event for raw/sensors_20260313T002416.csv
+2026-03-13 00:24:18,054 - INFO - Processing started for raw/sensors_20260313T002416.csv
+2026-03-13 00:24:18,638 - INFO - Successfully logged to s3
+2026-03-13 00:25:18,121 - INFO - Received S3 event for raw/sensors_20260313T002517.csv
+2026-03-13 00:25:18,121 - INFO - Processing started for raw/sensors_20260313T002517.csv
+2026-03-13 00:25:18,662 - INFO - Successfully logged to s3
+2026-03-13 00:26:18,616 - INFO - Received S3 event for raw/sensors_20260313T002617.csv
+2026-03-13 00:26:18,616 - INFO - Processing started for raw/sensors_20260313T002617.csv
+2026-03-13 00:26:19,188 - INFO - Successfully logged to s3
+2026-03-13 00:27:18,310 - INFO - Received S3 event for raw/sensors_20260313T002717.csv
+2026-03-13 00:27:18,310 - INFO - Processing started for raw/sensors_20260313T002717.csv
+2026-03-13 00:27:18,932 - INFO - Successfully logged to s3
+2026-03-13 00:28:19,026 - INFO - Received S3 event for raw/sensors_20260313T002817.csv
+2026-03-13 00:28:19,026 - INFO - Processing started for raw/sensors_20260313T002817.csv
+2026-03-13 00:28:19,584 - INFO - Successfully logged to s3
+2026-03-13 00:29:18,772 - INFO - Received S3 event for raw/sensors_20260313T002917.csv
+2026-03-13 00:29:18,772 - INFO - Processing started for raw/sensors_20260313T002917.csv
+2026-03-13 00:29:19,324 - INFO - Successfully logged to s3
+2026-03-13 00:30:19,429 - INFO - Received S3 event for raw/sensors_20260313T003018.csv
+2026-03-13 00:30:19,429 - INFO - Processing started for raw/sensors_20260313T003018.csv
+2026-03-13 00:30:20,005 - INFO - Successfully logged to s3
+2026-03-13 00:31:19,336 - INFO - Received S3 event for raw/sensors_20260313T003118.csv
+2026-03-13 00:31:19,336 - INFO - Processing started for raw/sensors_20260313T003118.csv
+2026-03-13 00:31:19,996 - INFO - Successfully logged to s3
+2026-03-13 00:32:19,609 - INFO - Received S3 event for raw/sensors_20260313T003218.csv
+2026-03-13 00:32:19,609 - INFO - Processing started for raw/sensors_20260313T003218.csv
+2026-03-13 00:32:20,240 - INFO - Successfully logged to s3
+2026-03-13 00:33:20,120 - INFO - Received S3 event for raw/sensors_20260313T003318.csv
+2026-03-13 00:33:20,120 - INFO - Processing started for raw/sensors_20260313T003318.csv
+2026-03-13 00:33:20,736 - INFO - Successfully logged to s3
+2026-03-13 00:34:19,981 - INFO - Received S3 event for raw/sensors_20260313T003419.csv
+2026-03-13 00:34:19,981 - INFO - Processing started for raw/sensors_20260313T003419.csv
+2026-03-13 00:34:20,556 - INFO - Successfully logged to s3
+2026-03-13 00:35:20,618 - INFO - Received S3 event for raw/sensors_20260313T003519.csv
+2026-03-13 00:35:20,618 - INFO - Processing started for raw/sensors_20260313T003519.csv
+2026-03-13 00:35:21,376 - INFO - Successfully logged to s3
+2026-03-13 00:36:21,010 - INFO - Received S3 event for raw/sensors_20260313T003619.csv
+2026-03-13 00:36:21,011 - INFO - Processing started for raw/sensors_20260313T003619.csv
+2026-03-13 00:36:21,638 - INFO - Successfully logged to s3
+2026-03-13 00:37:20,728 - INFO - Received S3 event for raw/sensors_20260313T003719.csv
+2026-03-13 00:37:20,728 - INFO - Processing started for raw/sensors_20260313T003719.csv
+2026-03-13 00:37:21,270 - INFO - Successfully logged to s3
+2026-03-13 00:38:21,391 - INFO - Received S3 event for raw/sensors_20260313T003820.csv
+2026-03-13 00:38:21,391 - INFO - Processing started for raw/sensors_20260313T003820.csv
+2026-03-13 00:38:21,877 - INFO - Successfully logged to s3
+2026-03-13 00:39:21,008 - INFO - Received S3 event for raw/sensors_20260313T003920.csv
+2026-03-13 00:39:21,008 - INFO - Processing started for raw/sensors_20260313T003920.csv
+2026-03-13 00:39:21,600 - INFO - Successfully logged to s3
+2026-03-13 00:40:21,615 - INFO - Received S3 event for raw/sensors_20260313T004020.csv
+2026-03-13 00:40:21,615 - INFO - Processing started for raw/sensors_20260313T004020.csv
+2026-03-13 00:40:22,164 - INFO - Successfully logged to s3
+2026-03-13 00:41:22,087 - INFO - Received S3 event for raw/sensors_20260313T004120.csv
+2026-03-13 00:41:22,087 - INFO - Processing started for raw/sensors_20260313T004120.csv
+2026-03-13 00:41:22,672 - INFO - Successfully logged to s3
+2026-03-13 00:42:21,817 - INFO - Received S3 event for raw/sensors_20260313T004221.csv
+2026-03-13 00:42:21,817 - INFO - Processing started for raw/sensors_20260313T004221.csv
+2026-03-13 00:42:22,388 - INFO - Successfully logged to s3
+2026-03-13 00:43:22,326 - INFO - Received S3 event for raw/sensors_20260313T004321.csv
+2026-03-13 00:43:22,326 - INFO - Processing started for raw/sensors_20260313T004321.csv
+2026-03-13 00:43:23,006 - INFO - Successfully logged to s3
+2026-03-13 00:44:22,877 - INFO - Received S3 event for raw/sensors_20260313T004421.csv
+2026-03-13 00:44:22,877 - INFO - Processing started for raw/sensors_20260313T004421.csv
+2026-03-13 00:44:23,465 - INFO - Successfully logged to s3
+2026-03-13 00:45:23,317 - INFO - Received S3 event for raw/sensors_20260313T004521.csv
+2026-03-13 00:45:23,317 - INFO - Processing started for raw/sensors_20260313T004521.csv
+2026-03-13 00:45:23,977 - INFO - Successfully logged to s3
+2026-03-13 00:46:23,231 - INFO - Received S3 event for raw/sensors_20260313T004622.csv
+2026-03-13 00:46:23,232 - INFO - Processing started for raw/sensors_20260313T004622.csv
+2026-03-13 00:46:23,852 - INFO - Successfully logged to s3
+2026-03-13 00:47:23,712 - INFO - Received S3 event for raw/sensors_20260313T004722.csv
+2026-03-13 00:47:23,712 - INFO - Processing started for raw/sensors_20260313T004722.csv
+2026-03-13 00:47:24,350 - INFO - Successfully logged to s3
+2026-03-13 00:48:23,304 - INFO - Received S3 event for raw/sensors_20260313T004822.csv
+2026-03-13 00:48:23,304 - INFO - Processing started for raw/sensors_20260313T004822.csv
+2026-03-13 00:48:23,888 - INFO - Successfully logged to s3
+2026-03-13 00:49:23,839 - INFO - Received S3 event for raw/sensors_20260313T004922.csv
+2026-03-13 00:49:23,839 - INFO - Processing started for raw/sensors_20260313T004922.csv
+2026-03-13 00:49:24,537 - INFO - Successfully logged to s3
+2026-03-13 00:50:24,478 - INFO - Received S3 event for raw/sensors_20260313T005022.csv
+2026-03-13 00:50:24,479 - INFO - Processing started for raw/sensors_20260313T005022.csv
+2026-03-13 00:50:25,069 - INFO - Successfully logged to s3
+2026-03-13 00:51:24,825 - INFO - Received S3 event for raw/sensors_20260313T005123.csv
+2026-03-13 00:51:24,825 - INFO - Processing started for raw/sensors_20260313T005123.csv
+2026-03-13 00:51:25,510 - INFO - Successfully logged to s3
+2026-03-13 00:52:24,560 - INFO - Received S3 event for raw/sensors_20260313T005223.csv
+2026-03-13 00:52:24,560 - INFO - Processing started for raw/sensors_20260313T005223.csv
+2026-03-13 00:52:25,222 - INFO - Successfully logged to s3
+2026-03-13 00:53:25,209 - INFO - Received S3 event for raw/sensors_20260313T005323.csv
+2026-03-13 00:53:25,209 - INFO - Processing started for raw/sensors_20260313T005323.csv
+2026-03-13 00:53:25,893 - INFO - Successfully logged to s3
+2026-03-13 00:54:24,786 - INFO - Received S3 event for raw/sensors_20260313T005424.csv
+2026-03-13 00:54:24,786 - INFO - Processing started for raw/sensors_20260313T005424.csv
+2026-03-13 00:54:25,438 - INFO - Successfully logged to s3
+2026-03-13 00:55:25,477 - INFO - Received S3 event for raw/sensors_20260313T005524.csv
+2026-03-13 00:55:25,477 - INFO - Processing started for raw/sensors_20260313T005524.csv
+2026-03-13 00:55:26,024 - INFO - Successfully logged to s3
+2026-03-13 00:56:25,990 - INFO - Received S3 event for raw/sensors_20260313T005624.csv
+2026-03-13 00:56:25,990 - INFO - Processing started for raw/sensors_20260313T005624.csv
+2026-03-13 00:56:26,572 - INFO - Successfully logged to s3
+2026-03-13 00:57:25,718 - INFO - Received S3 event for raw/sensors_20260313T005724.csv
+2026-03-13 00:57:25,718 - INFO - Processing started for raw/sensors_20260313T005724.csv
+2026-03-13 00:57:26,423 - INFO - Successfully logged to s3
+2026-03-13 00:58:26,063 - INFO - Received S3 event for raw/sensors_20260313T005824.csv
+2026-03-13 00:58:26,063 - INFO - Processing started for raw/sensors_20260313T005824.csv
+2026-03-13 00:58:26,750 - INFO - Successfully logged to s3
+2026-03-13 00:59:26,448 - INFO - Received S3 event for raw/sensors_20260313T005925.csv
+2026-03-13 00:59:26,448 - INFO - Processing started for raw/sensors_20260313T005925.csv
