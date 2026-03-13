@@ -14,7 +14,7 @@
 
 
 #### **IAM and least privilege:** The IAM policy for the EC2 instance grants full access to one S3 bucket. List the specific S3 operations the application actually performs (e.g., GetObject, PutObject, ListBucket). Could you replace the “full access” policy with a minimal set of permissions that still allows the app to work? What would that policy look like?
-- 
+- The operations the application performs are GetObject, PutObject, DeleteObject, and ListBucket. Yes you could, you could limit which parts have access to each operation. You could limit ListBucket to Bucket/* and give permissions to the bucket to GetObject and PutObject. We can also remove DeleteObject since we currently dont need it for either level for the app to work. 
 
 
 
